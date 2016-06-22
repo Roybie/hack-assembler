@@ -28,7 +28,7 @@ fn main() {
     let mut preparse: Vec<String> = Vec::new();
 
     let lines = string.lines().filter(|line| {
-        !line.starts_with('/') && line.len() > 0
+        !line.trim().starts_with('/') && line.len() > 0
     }).map(|line| {
         line.split_whitespace().next().unwrap()
     }).collect::<Vec<&str>>();
